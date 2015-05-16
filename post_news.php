@@ -3,6 +3,12 @@
 	require 'LIB_parse.php';
 	require 'db.connection.php';
 	
+	//if today is weekend,exit.
+	$date = date("Y-m-d");
+	$weekDay = date('w', strtotime($date));
+	if($weekDay == 0 || $weekDay == 6)
+		exit();
+	
 	function parse_html($contents)
 	{
 		$result = array();
