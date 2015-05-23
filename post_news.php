@@ -172,7 +172,7 @@
 		
 		//刪除檔案,留下error_log.txt , 將今日日期離一個月的公告刪除
 		$arr_keys = array_keys($url);
-		for($arr_keys as $key)
+		foreach($arr_keys as $key)
 		{
 			$stmt = $link_db -> query("DELETE FROM ".$key." WHERE DATEDIFF(NOW(),date)>=30");
 			@unlink($key.'.html');
